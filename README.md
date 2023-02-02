@@ -1,11 +1,14 @@
-User story: I can see a list of properties
-User story: I can see the property card with a name, rating, apartment type, and super host
-User story: I can open the filter drawer
-User story: I can filter properties by location and number of guests
-User story: I can see the number of filtered items
-User story: I can see pages following given designs# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+User story: User can type location and see relevant forecast
+User story: User can reach next day's weather
+User story: User can see today's highlights
+User story: User can see forecast based on selected TimeZone
+
+
+Node Modules folder is ignored. Yarn command is needed.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).]
+
+
 
 ## Available Scripts
 
