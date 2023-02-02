@@ -8,7 +8,7 @@ export const getForecasts = async (
   dispatch?: React.Dispatch<any>,
 ) => {
   try {
-    const res = await axios.get(`http://api.weatherapi.com/v1/forecast.json`, {
+    const res = await axios.get(`https://api.weatherapi.com/v1/forecast.json`, {
       params: {
         key: process.env.REACT_APP_API_KEY,
         q: location,

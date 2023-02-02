@@ -23,7 +23,7 @@ export const WeatherCardByTZ: React.FC<WeatherDataProps> = ({
             condition: { icon = '' } = {},
           } = {},
           location: { name = '', localtime = '' } = {},
-        } = weather.data ?? {}
+        } = weather?.data ?? {}
 
         return (
           <CardItem
