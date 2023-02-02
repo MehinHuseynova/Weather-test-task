@@ -6,7 +6,7 @@ import {
   SelectChangeEvent,
 } from '@mui/material'
 import { WeatherSearchContext } from 'contexts/weatherSearchContext'
-import { StateProps, useHandleInput } from 'hooks/useFilterSearch'
+import { StateProps } from 'hooks/useFilterSearch'
 import { useContext, useEffect } from 'react'
 import { findRegionsByTimeZone } from 'views/api'
 import { useStyles } from './selectBox.style'

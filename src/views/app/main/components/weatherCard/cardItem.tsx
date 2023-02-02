@@ -22,6 +22,7 @@ interface CardDataProps {
   humidity?: string
   feelslike_c?: string
   isNextDay?: boolean
+  showHighlights?: boolean
 }
 
 export const CardItem: React.FC<CardDataProps> = ({
@@ -35,6 +36,7 @@ export const CardItem: React.FC<CardDataProps> = ({
   humidity,
   feelslike_c,
   isNextDay,
+  showHighlights = false,
 }) => {
   const { classes } = useStyles()
   const [isDetailVisible, setDetailVisible] = useState<boolean>(false)
@@ -66,7 +68,7 @@ export const CardItem: React.FC<CardDataProps> = ({
                 day: 'numeric',
               })}
             </Typography>
-            {!isNextDay ? (
+            {!isNextDay && showHighlights ? (
               <Box
                 className={classes.expandMore}
                 onClick={handleDetailVisibility}

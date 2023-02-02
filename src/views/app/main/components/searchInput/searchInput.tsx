@@ -5,7 +5,7 @@ import { useCallback, useContext } from 'react'
 import { ActionType } from 'reducers/searchReducer'
 import { getForecasts } from 'views/api'
 import { useStyles } from './searchInput.style'
-
+import { useEffect } from 'react'
 interface InputProps {
   inputState: StateProps
   handleChange: (
@@ -26,21 +26,7 @@ export const SearchInput: React.FC<InputProps> = ({
   const handleSubmit = useCallback(async () => {
     const dayCount = 2
     const exactTimeForTomorrow = new Date().getHours()
-    try {
-      const res = await getForecasts(inputState.location)
-      const nextDayInfo = await getForecasts(
-        inputState.location,
-        exactTimeForTomorrow,
-        dayCount,
-      )
-      dispatch({ type: ActionType.SET_WEATHER_DATA, payload: res })
-      dispatch({
-        type: ActionType.SET_FORECAST_DATA,
-        payload: nextDayInfo?.data?.forecast?.forecastday,
-      })
-    } catch (error) {
-      console.log(error)
-    }
+    getForecasts(inputState.location, exactTimeForTomorrow, dayCount, dispatch)
   }, [inputState.location])
 
   return (

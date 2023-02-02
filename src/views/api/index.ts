@@ -2,9 +2,10 @@ import axios from 'axios'
 import { ActionType } from 'reducers/searchReducer'
 
 export const getForecasts = async (
-  location: string,
+  location?: string,
   hour?: number,
   days?: number,
+  dispatch?: React.Dispatch<any>,
 ) => {
   try {
     const res = await axios.get(`http://api.weatherapi.com/v1/forecast.json`, {
@@ -15,6 +16,15 @@ export const getForecasts = async (
         ...(days ? { days } : {}),
       },
     })
+    if (dispatch) {
+      dispatch({ type: ActionType.SET_WEATHER_DATA, payload: res })
+      console.log(res)
+      dispatch({
+        type: ActionType.SET_FORECAST_DATA,
+        payload: res?.data?.forecast?.forecastday,
+      })
+    }
+
     return res
   } catch (error) {
     console.log(error)

@@ -14,6 +14,7 @@ export const useStyles = makeStyles()((theme) => {
       color: 'white',
       textAlign: 'center',
       fontSize: '14px',
+      minHeight: '200px',
     },
     expandMore: {
       display: 'flex',

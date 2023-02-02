@@ -27,6 +27,7 @@ export const WeatherCardByTZ: React.FC<WeatherDataProps> = ({
 
         return (
           <CardItem
+            key={name}
             {...{
               temp_c,
               icon,

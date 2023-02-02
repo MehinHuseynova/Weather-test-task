@@ -12,17 +12,16 @@ import { WeatherCardByTZ } from './components/weatherCard/weatherCardByTz'
 export const Main = () => {
   const { classes } = useStyles()
   const [inputState, handleChange] = useHandleInput()
-  const [isNextDay, setIsNextDay] = React.useState<boolean>(false)
   const { state } = useContext(WeatherSearchContext)
+  const [isNextDay, setIsNextDay] = React.useState<boolean>(false)
   const { currentWeather, currentWeatherByTZ, nextDayWeatherData } = state
-
-  const [value, setValue] = React.useState(0)
+  const [tabIndex, setTabIndex] = React.useState(0)
 
   const handleChangeTabIndex = (
     event: React.SyntheticEvent,
     newValue: number,
   ) => {
-    setValue(newValue)
+    setTabIndex(newValue)
   }
 
   const handleNextDayVisibility = () => {
@@ -32,7 +31,7 @@ export const Main = () => {
     <Container>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs
-          value={value}
+          value={tabIndex}
           onChange={handleChangeTabIndex}
           aria-label="basic tabs example"
           className={classes.tab}
@@ -41,11 +40,15 @@ export const Main = () => {
           <Tab label="Weather By TimeZone" {...a11yProps(1)} />
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
+      <TabPanel value={tabIndex} index={0}>
         <Box>
           <Box display="flex" justifyContent="space-between">
             <Box>
-              <Button variant="outlined" onClick={handleNextDayVisibility}>
+              <Button
+                variant="outlined"
+                onClick={handleNextDayVisibility}
+                disabled={!inputState.location}
+              >
                 {isNextDay ? ' See Today' : 'See Tomorrow'}
               </Button>
             </Box>
@@ -62,7 +65,7 @@ export const Main = () => {
           </Box>
         </Box>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      <TabPanel value={tabIndex} index={1}>
         <Box display="flex" justifyContent="flex-end">
           <SelectBox {...{ inputState, handleChange }} />
         </Box>

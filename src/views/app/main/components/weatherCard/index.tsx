@@ -32,6 +32,8 @@ export const WeatherCard: React.FC<WeatherDataProps> = ({
 
         return (
           <CardItem
+            key={name}
+            showHighlights
             {...{
               temp_c,
               icon,

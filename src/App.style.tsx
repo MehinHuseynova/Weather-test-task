@@ -1,11 +1,9 @@
+import { makeStyles } from 'tss-react/mui'
 
-import { makeStyles } from 'tss-react/mui';
-
-export const useStyles = makeStyles<{color:string}>()((theme, { color }) => {
+export const useStyles = makeStyles<{ color: string }>()((theme) => {
   return {
     root: {
-boxSizing:'border-box'
-    }
+      boxSizing: 'border-box',
+    },
   }
-
 })
