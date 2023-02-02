@@ -11,5 +11,15 @@ export const useStyles = makeStyles()((theme) => {
         },
       },
     },
+    buttonGroup: {
+      [theme.breakpoints.down('md')]: {
+        display: 'flex',
+        flexDirection: 'column',
+        '& button': {
+          width: '100%',
+          marginBottom: theme.spacing(1),
+        },
+      },
+    },
   }
 })

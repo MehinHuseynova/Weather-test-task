@@ -42,7 +42,7 @@ export const Main = () => {
       </Box>
       <TabPanel value={tabIndex} index={0}>
         <Box>
-          <Box display="flex" justifyContent="space-between">
+          <Box display="flex" justifyContent="space-between" className={classes.buttonGroup}>
             <Box>
               <Button
                 variant="outlined"
