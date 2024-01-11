@@ -1,13 +1,22 @@
 
-User story: User can type location and see relevant forecast
-User story: User can reach next day's weather
-User story: User can see today's highlights
-User story: User can see forecast based on selected TimeZone
+### Weather Forecast Application
 
+## Overview
+This React project is a weather forecast application that empowers users to access current and future weather information. The application caters to specific user stories to provide a seamless and informative weather browsing experience.
 
-Node Modules folder is ignored. Yarn command is needed.
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).]
+## User Stories
+Search by Location:
 
+👉🏻 a user, I can type a location and view the relevant weather forecast.
+Next Day's Weather:
+
+👉🏻 As a user, I can quickly access the weather forecast for the next day.
+Today's Highlights:
+
+👉🏻 As a user, I can view today's weather highlights, providing a concise summary of the day's conditions.
+TimeZone-specific Forecast:
+
+👉🏻 As a user, I can see the weather forecast based on the selected TimeZone, ensuring accurate and personalized information.
 
 
 ## Available Scripts
